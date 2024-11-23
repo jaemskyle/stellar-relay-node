@@ -4,6 +4,8 @@
   "type": "module",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
     "@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -16,10 +18,12 @@
     "ws": "^8.18.0"
   },
   "scripts": {
+    "start": "node index.js",
+    "build": "babel index.js lib -d dist --copy-files --out-dir dist && for file in dist/*.js; do terser \"$file\" -o \"$file\" --compress --mangle; done",
     "_start": "nodemon -r dotenv/config ./index.js",
-    "start": "nodemon ./index.js",
-    "_build": "node -r dotenv/config ./index.js",    
-    "build": "node ./index.js",    
+    "__start": "nodemon ./index.js",
+    "_build": "node -r dotenv/config ./index.js",
+    "__build": "node ./index.js",
     "_relay": "nodemon -r dotenv/config ./index.js",
     "relay": "nodemon ./index.js",
     "postinstall": "patch-package"
@@ -37,7 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.9",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.26.0",
     "@flydotio/dockerfile": "^0.5.9",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
@@ -46,6 +52,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "nodemon": "^3.1.7",
     "patch-package": "^8.0.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "terser": "^5.36.0"
   }
 }

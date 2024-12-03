@@ -1,0 +1,16 @@
+diff --git a/node_modules/@openai/realtime-api-beta/lib/client.js b/node_modules/@openai/realtime-api-beta/lib/client.js
+index 2c48d7f..ccdcc9b 100644
+--- a/node_modules/@openai/realtime-api-beta/lib/client.js
++++ b/node_modules/@openai/realtime-api-beta/lib/client.js
+@@ -355,8 +355,9 @@ export class RealtimeClient extends RealtimeEventHandler {
+       if (item.status === 'completed') {
+         this.dispatch('conversation.item.completed', { item });
+       }
+-      if (item.formatted.tool) {
+-        callTool(item.formatted.tool);
++      const tool = item.formatted.tool;
++      if (tool && this.tools[tool.name]?.handler) {
++        callTool(tool);
+       }
+     });
+ 

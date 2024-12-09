@@ -1,8 +1,19 @@
 {
-  "name": "openai-realtime-console",
+  "name": "stellar-relay",
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "build": "babel index.js lib -d dist --copy-files --out-dir dist && for file in dist/*.js; do terser \"$file\" -o \"$file\" --compress --mangle; done",
+    "_start": "nodemon -r dotenv/config ./index.js",
+    "__start": "nodemon ./index.js",
+    "_build": "node -r dotenv/config ./index.js",
+    "__build": "node ./index.js",
+    "_relay": "nodemon -r dotenv/config ./index.js",
+    "relay": "nodemon ./index.js",
+    "postinstall": "patch-package"
+  },
   "dependencies": {
     "@babel/core": "^7.26.0",
     "@babel/node": "^7.26.0",
@@ -17,16 +28,11 @@
     "web-vitals": "^2.1.4",
     "ws": "^8.18.0"
   },
-  "scripts": {
-    "start": "node index.js",
-    "build": "babel index.js lib -d dist --copy-files --out-dir dist && for file in dist/*.js; do terser \"$file\" -o \"$file\" --compress --mangle; done",
-    "_start": "nodemon -r dotenv/config ./index.js",
-    "__start": "nodemon ./index.js",
-    "_build": "node -r dotenv/config ./index.js",
-    "__build": "node ./index.js",
-    "_relay": "nodemon -r dotenv/config ./index.js",
-    "relay": "nodemon ./index.js",
-    "postinstall": "patch-package"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -42,20 +48,20 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.25.9",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.26.0",
-    "@eslint/compat": "^1.2.3",
-    "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.14.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@flydotio/dockerfile": "^0.5.9",
+    "terser": "^5.36.0",
+    "nodemon": "^3.1.7",
+    "patch-package": "^8.0.0",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
-    "nodemon": "^3.1.7",
-    "patch-package": "^8.0.0",
-    "prettier": "^3.3.3",
-    "terser": "^5.36.0"
+    "@eslint/compat": "^1.2.3",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.14.0",
+    "prettier": "^3.3.3"
   }
 }

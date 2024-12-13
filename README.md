@@ -21,7 +21,7 @@ npm i
 npm run relay
 ```
 
-# Update the client .env file with the Websocket Endpoint
+# Update the frontend client .env file with the Websocket Endpoint
 
 ``` dotenv
 PUBLIC_RELAY_SERVER_URL="ws://localhost:3000"

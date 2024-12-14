@@ -6,6 +6,7 @@
 ├── index.js
 ├── jsconfig.json
 ├── lib
+│   ├── logger.js
 │   └── relay.js
 ├── misc
 │   └── stellar-relay-node-openai-pkg
@@ -20,7 +21,6 @@
 │   └── @openai+realtime-api-beta+0.0.0.patch
 ├── patches_backup
 │   └── @openai+realtime-api-beta+0.0.1.patch
-├── stellar_relay_dir_tree.txt
-└── tsconfig.json
+└── stellar_relay_dir_tree.txt
 
 6 directories, 18 files

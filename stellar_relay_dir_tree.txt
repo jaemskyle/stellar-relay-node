@@ -1,0 +1,26 @@
+.
+├── Dockerfile
+├── README.md
+├── babel.config.json
+├── fly.toml
+├── index.js
+├── jsconfig.json
+├── lib
+│   ├── logger.js
+│   └── relay.js
+├── misc
+│   └── stellar-relay-node-openai-pkg
+│       ├── api.js
+│       ├── client.js
+│       ├── conversation.js
+│       ├── event_handler.js
+│       └── utils.js
+├── package-lock.json
+├── package.json
+├── patches
+│   └── @openai+realtime-api-beta+0.0.0.patch
+├── patches_backup
+│   └── @openai+realtime-api-beta+0.0.1.patch
+└── stellar_relay_dir_tree.txt
+
+6 directories, 18 files

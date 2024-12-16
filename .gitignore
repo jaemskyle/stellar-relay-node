@@ -1,5 +1,9 @@
 /.DS_Store
 /node_modules/
+node_modules
+node_modules.nosync
 /.history/
 /.env
 patches_backup
+
+misc

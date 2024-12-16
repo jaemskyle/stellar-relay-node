@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        // Target the latest JavaScript features
+        "target": "ESNext",
+        // Use ES modules for modern syntax
+        "module": "ESNext",
+        // Base directory for resolving non-absolute paths
+        "baseUrl": ".",
+        // Path aliases for cleaner imports
+        "paths": {
+            "@lib/*": [
+                "lib/*"
+            ],
+            "@misc/*": [
+                "misc/*"
+            ]
+        },
+        // Allow importing JSON files
+        "resolveJsonModule": true,
+        // Use Node.js module resolution strategy
+        "moduleResolution": "node",
+        // Enable strict type checking for better code quality
+        "strict": true,
+        // Ensure consistent casing in file names
+        "forceConsistentCasingInFileNames": true,
+        // Skip type checking of declaration files to speed up builds
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+    },
+    "include": [
+        "index.js",
+        "lib/**/*.js",
+        "misc/**/*.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "patches",
+        "patches_backup"
+    ]
+}

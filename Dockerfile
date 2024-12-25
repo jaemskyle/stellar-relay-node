@@ -11,7 +11,7 @@ WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
-ENV OPENAI_API_KEY=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
+ENV OPENAI_API_KEY=""
 
 
 # Throw-away build stage to reduce size of final image
